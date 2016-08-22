@@ -5,6 +5,5 @@ package com.playcode.mvpdemo.base;
  */
 
 public interface BasePresenter {
-
     void start();
 }

@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my);
+        setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     private void init() {
         mRecyclerView = (RecyclerView) findViewById(R.id.rv_data);
 
-        mAdapter = new MyAdapter(this, R.layout.item_my, new ArrayList<ArticleList.StoriesBean>());
+        mAdapter = new MyAdapter(this, R.layout.item_main, new ArrayList<ArticleList.StoriesBean>());
 
         mRecyclerView.setAdapter(mAdapter);
     }
@@ -102,11 +102,6 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         public void refresh(List<ArticleList.StoriesBean> itemList) {
             mDatas.clear();
             mDatas.addAll(itemList);
-            notifyDataSetChanged();
-        }
-
-        public void clear() {
-            mDatas.clear();
             notifyDataSetChanged();
         }
     }
